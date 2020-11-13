@@ -1,0 +1,27 @@
+#!/bin/sh -e
+
+# env | sort
+
+if [ -z "$GOPATH" ]; then
+	echo "GOPATH is not set"
+	exit 1
+fi
+
+mkdir -p "$GOPATH"
+cd "$GOPATH/.."
+
+if [ ! -x "$GOPATH/bin/go" ]; then
+	echo "Installing go..."
+	open .
+	curl -sL https://golang.org/dl/go1.14.12.darwin-amd64.tar.gz | tar xzf -
+fi
+echo "Go is installed"
+go version
+
+if [ ! -x "$GOPATH/bin/gopls" ]; then
+	echo "Installing gopls"
+	open .
+	GO111MODULE=on "$GOPATH/bin/go" get golang.org/x/tools/gopls@v0.5.3
+fi
+echo "gopls is installed"
+gopls version

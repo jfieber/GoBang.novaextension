@@ -1,0 +1,20 @@
+{
+  "identifier": "org.ursamaris.nova.GoBang",
+  "name": "GoBang",
+  "organization": "John Fieber",
+  "description": "Go for Nova",
+  "version": "1.0",
+  "min_runtime": "3.0",
+  "categories": ["languages"],
+  "keywords": ["go", "golang"],
+  "license": "MIT",
+
+  "main": "main.js",
+
+  "activationEvents": ["onLanguage:Go", "onWorkspaceContains:*.go"],
+
+  "entitlements": {
+    "process": true,
+    "filesystem": "readonly"
+  }
+}
