@@ -10,18 +10,24 @@ fi
 mkdir -p "$GOPATH"
 cd "$GOPATH/.."
 
+open .
+cat <<EOF > README.txt
+To reset the go and gopls install:
+1. Deactivate the GoBang extension
+2. Remove the go folder in this directory
+3. Activate the GoBang extension
+EOF
+
 if [ ! -x "$GOPATH/bin/go" ]; then
 	echo "Installing go..."
-	open .
-	curl -sL https://golang.org/dl/go1.14.12.darwin-amd64.tar.gz | tar xzf -
+	curl -sL https://golang.org/dl/go1.15.6.darwin-amd64.tar.gz | tar xzf -
 fi
 echo "Go is installed"
 go version
 
 if [ ! -x "$GOPATH/bin/gopls" ]; then
 	echo "Installing gopls"
-	open .
-	GO111MODULE=on "$GOPATH/bin/go" get golang.org/x/tools/gopls@v0.5.3
+	GO111MODULE=on "$GOPATH/bin/go" get golang.org/x/tools/gopls@v0.6.2
 fi
 echo "gopls is installed"
 gopls version

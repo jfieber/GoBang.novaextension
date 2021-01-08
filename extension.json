@@ -3,7 +3,7 @@
   "name": "GoBang",
   "organization": "John Fieber",
   "description": "Go for Nova",
-  "version": "1.0",
+  "version": "1.1",
   "min_runtime": "3.0",
   "categories": ["languages"],
   "keywords": ["go", "golang"],
