@@ -20,14 +20,14 @@ EOF
 
 if [ ! -x "$GOPATH/bin/go" ]; then
 	echo "Installing go..."
-	curl -sL https://golang.org/dl/go1.15.6.darwin-amd64.tar.gz | tar xzf -
+	curl -sL https://golang.org/dl/go1.15.8.darwin-amd64.tar.gz | tar xzf -
 fi
 echo "Go is installed"
 go version
 
 if [ ! -x "$GOPATH/bin/gopls" ]; then
 	echo "Installing gopls"
-	GO111MODULE=on "$GOPATH/bin/go" get golang.org/x/tools/gopls@v0.6.2
+	GO111MODULE=on "$GOPATH/bin/go" get golang.org/x/tools/gopls@v0.6.6
 fi
 echo "gopls is installed"
 gopls version

@@ -1,4 +1,4 @@
-**GoBang** is a self-contained repro case for the [Go "gopls" language server](https://github.com/golang/tools/blob/master/gopls/doc/user.md) causing [Nova](https://nova.app) 3.0 to crash. There may well be incorrect behavior of gopls going on here, but having Nova vaporize is not a good user experience.
+**GoBang** is a self-contained repro case for the [Go "gopls" language server](https://github.com/golang/tools/blob/master/gopls/doc/user.md) causing [Nova](https://nova.app) 3.x, 4.x and 5.0 to crash. There may well be incorrect behavior of gopls going on here, but having Nova vaporize is not a good user experience.
 
 1. Open the extension for editing.
 2. Ensure that the Language Servers _Code actions indicator_ option is enabled in _Preferences_ → _Editor_ → _Syntax_.
